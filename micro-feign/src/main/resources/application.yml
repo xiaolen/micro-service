@@ -1,0 +1,21 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8191
+spring:
+  application:
+    name: service-feign
+
+#暴露所的actuator的监控端点
+management:
+  endpoint:
+    web:
+      exposure:
+        include: '*'
+
+#feign自带断熔机制在配置文件中开启即可
+feign:
+  hystrix:
+    enabled: true

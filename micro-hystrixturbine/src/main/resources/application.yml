@@ -1,0 +1,15 @@
+server:
+  port: 8031
+spring:
+  application:
+    name: micro-hystrixturbine
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+turbine:
+#要监控的服务列表，多个用 ，号隔开
+  app-config: service-feign
+  cluster-name-expression: "'default'"
